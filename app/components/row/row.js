@@ -8,7 +8,7 @@ export default function Row(props) {
   return (
     <View style={styles.container}>
       {props.cells.map((cell, i) => (
-        <Button key={i} {...cell} />
+        <Button key={i} {...cell} onChange={() => props.onChange(cell.text)} />
       ))}
     </View>
   );
@@ -16,4 +16,5 @@ export default function Row(props) {
 
 Row.propTypes = {
   cells: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
